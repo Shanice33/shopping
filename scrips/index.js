@@ -6,7 +6,7 @@ $(function () {
     $(".num li").mouseover(function () {
         index=$(".num li").index(this);
         showImg(index);
-    }).eq(0).mouseover();
+    }).eq(0).mouseover();  /*初始化，自动播放*/
 
     $(".ad").hover(function () {
         clearInterval(timer);
@@ -81,7 +81,7 @@ $(function () {
                 //$(".prolist_content").animate({left:-liWidth*(p-1)},1000);
             }
         }
-        console.log(p);
+       //console.log(p);
         move($(".prolist_content"),p);
     });
 
@@ -129,7 +129,7 @@ $(function () {
 $(function () {
     $(".m-treeview>li>span").click(function () {
         var parent=$(this).parent();
-        console.log(parent);
+        //console.log(parent);
         if(parent.attr("class")=="m-expanded"){
             parent.attr("class","m-collapsed");
         }else{
@@ -137,5 +137,24 @@ $(function () {
 
         }
         //return false;
+    });
+});
+/*超文字链接提示*/
+$(function () {
+    var x=10;
+    var y=20;
+    var myTitle;
+    $(".tooltip").mouseover(function (e) {
+        myTitle=this.title;
+        this.title="";
+        var oDiv=$("<div id='tooltip'>"+myTitle+"</div>");
+        oDiv.appendTo("body");
+        $("#tooltip").css({"top":(e.pageY+y)+"px","left":(e.pageX+x)+"px"}).show("fast");
+    }).mouseout(function () {
+        this.title=myTitle;
+        $("#tooltip").remove();
+    }).mousemove(function (e) {
+        $("#tooltip").css({"top":(e.pageY+y)+"px",
+            "left":(e.pageX+x)+"px"});
     });
 });

@@ -121,7 +121,8 @@
     height:30px;
     padding:1px;
     background:#EEE;
-    border:1px solid #BBB;cursor:pointer;
+    border:1px solid #BBB;
+    cursor:pointer;
 }
 .pro_detail_right .color_change img:hover {
     padding:1px;
@@ -191,7 +192,7 @@
 .pro_detail_right .pro_rating ul li{
     cursor: pointer;
     float:left;
-    text-indent:-999em;
+    text-indent:-999em;  /*使文字显示到看不见的区域 */
 }
 ul.rating li a {
     position:absolute;
@@ -200,8 +201,7 @@ ul.rating li a {
     width:16px;
     height:16px;
     text-decoration:none;
-    z-index: 200;
-
+    z-index: 200;       /*元素重叠*/
 }
 ul.rating li.one a {left:0}
 ul.rating li.two a {left:16px;}

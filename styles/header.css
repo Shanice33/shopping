@@ -40,8 +40,8 @@
 	text-indent:-9999px; 
 	overflow:hidden; 
 	display:block; 
-	cursor:pointer; 
-	background-image:url(../images/theme.gif); 
+	cursor:pointer;
+	background-image:url(../images/theme.gif);
 }
 #skin_0 { background-position:0px 0px; }
 #skin_1 { background-position:15px 0px; }
